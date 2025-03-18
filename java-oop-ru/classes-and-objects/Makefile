@@ -1,6 +1,4 @@
-#test:
-#	gradle test
 test:
-	./gradlew test
+	gradle test
 example:
 	java src/main/java/exercise/Example.java

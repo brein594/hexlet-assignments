@@ -3,7 +3,6 @@ package exercise;
 import lombok.Getter;
 
 // BEGIN
-
 public class Segment {
     @Getter
     private Point beginPoint;
