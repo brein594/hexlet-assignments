@@ -15,7 +15,7 @@ public class Segment {
         this.endPoint = endPoint;
     }
 
-    public Point getMidPoint(Point beginPoint, Point endPoint) {
+    public Point getMidPoint() {
         var pointX = endPoint.getX - beginPoint.getX;
         var pointY = endPoint.getY - beginPoint.getY;
         var result = new Point(pointX, pointY);
