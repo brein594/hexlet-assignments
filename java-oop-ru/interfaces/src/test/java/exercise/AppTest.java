@@ -2,15 +2,8 @@ package exercise;
 
 import org.junit.jupiter.api.Test;
 import static org.assertj.core.api.Assertions.assertThat;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.BeforeAll;
 import java.util.ArrayList;
 import java.util.List;
-import java.lang.CharSequence;
-
-
-import java.lang.CharSequence;
-
 
 class AppTest {
 
@@ -62,18 +55,8 @@ class AppTest {
         assertThat(result).isEqualTo(expected);
     }
 
-    // BEGIN
-/*
-    @BeforeEach
-    @BeforeAll
-    public static void beforeEach() {
-        CharSequence text = new ReversedSequence("abcdef");
-    }
-
- */
-
     @Test
-    void testReversedSequenceString(){
+    void testReversedSequenceString() {
         CharSequence text = new ReversedSequence("abcdef");
         String expected = "fedcba";
         String result = text.toString();
@@ -81,7 +64,7 @@ class AppTest {
     }
 
     @Test
-    void testReversedSequenceLength(){
+    void testReversedSequenceLength() {
         CharSequence text = new ReversedSequence("abcdef");
         int expected = 6;
         int result = text.length();
@@ -89,7 +72,7 @@ class AppTest {
     }
 
     @Test
-    void testReversedSequenceCharAt(){
+    void testReversedSequenceCharAt() {
         CharSequence text = new ReversedSequence("abcdef");
         char expected = 'e';
         char result = text.charAt(1);
@@ -97,13 +80,11 @@ class AppTest {
     }
 
     @Test
-    void testReversedSequenceSubSequence(){
+    void testReversedSequenceSubSequence() {
         CharSequence text = new ReversedSequence("abcdef");
         String expected = "dcb";
         String result = text.subSequence(2,4).toString();
         assertThat(result).isEqualTo(expected);
     }
-
-
     // END
 }
