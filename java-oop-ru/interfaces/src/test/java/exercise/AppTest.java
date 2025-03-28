@@ -83,7 +83,7 @@ class AppTest {
     void testReversedSequenceSubSequence() {
         CharSequence text = new ReversedSequence("abcdef");
         String expected = "dcb";
-        String result = text.subSequence(2,4).toString();
+        String result = text.subSequence(2, 4).toString();
         assertThat(result).isEqualTo(expected);
     }
     // END
