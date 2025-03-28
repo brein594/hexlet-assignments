@@ -39,28 +39,16 @@ public class ReversedSequence implements CharSequence {
     }
 
     public CharSequence subSequence(int start, int end){
-
         if (start < 0 || start > reverseText.length() - 2 ) return "";
         if (end < start || end > reverseText.length() - 1) return "";
 
-        char[] result = new char[reverseText.length()];
+        char[] result = new char[end - start + 1];
         for (int i = start; i <= end; i++){
             result[end - i] = reverseText.charAt(i);
             }
-         /*
-        char[] result = new char[reverseText.length()];
-        for (int i = start; i <= end; i++){
-            result[i] = reverseText.charAt(i);
-        }
-        /*
-        reverseText = String.valueOf(result);
-        String textNew = reverse(reverseText);
-        CharSequence text = new ReversedSequence(textNew);
 
-         */
         CharSequence text = new ReversedSequence(String.valueOf(result));
         return text;
-        //return  text;
     }
 
 
