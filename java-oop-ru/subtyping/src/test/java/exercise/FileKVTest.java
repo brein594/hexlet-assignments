@@ -28,7 +28,7 @@ class FileKVTest {
 
     // BEGIN
     @Test
-    public void KVTest() {
+    public void kvTest() {
         KeyValueStorage storage = new FileKV("src/test/resources/file", Map.of("key", "value"));
         //assertThat(storage.get("key2", "default")).isEqualTo("default");
         assertThat(storage.get("key", "default")).isEqualTo("value");
@@ -40,7 +40,7 @@ class FileKVTest {
     }
 
     @Test
-    void mustBeImmutableTest() {
+    void mustBeImmutableKvTest() {
         Map<String, String> initial = new HashMap<>();
         initial.put("key", "value");
 

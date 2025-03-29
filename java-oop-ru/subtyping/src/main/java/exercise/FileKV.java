@@ -1,25 +1,16 @@
 package exercise;
 
 import java.util.Map;
-import java.util.HashMap;
+
 // BEGIN
 
-public class FileKV implements KeyValueStorage  {
+public class FileKV implements KeyValueStorage {
     private String pathToFile;
-    //private HashMap<String, String> storage;
 
     public FileKV(String pathToFile, Map<String, String> map) {
         String jsonWriteFile = Utils.serialize(map);
         this.pathToFile = pathToFile;
         Utils.writeFile(pathToFile, jsonWriteFile);
-        /*
-        this.pathToFile = pathToFile;
-        storage = new HashMap<String, String>();
-        var entries = map.entrySet();
-        for (var entry : entries) {
-            storage.put(entry.getKey(), entry.getValue());
-        }
-        */
     }
 
     public void set(String key, String value) {
@@ -41,7 +32,7 @@ public class FileKV implements KeyValueStorage  {
         return rewriteFile.getOrDefault(key, defaultValue);
     }
 
-   public Map<String, String> toMap(){
+    public Map<String, String> toMap() {
         /*
         HashMap<String, String> newStorage = new HashMap<>();
         var entries = storage.entrySet();
@@ -51,9 +42,8 @@ public class FileKV implements KeyValueStorage  {
         return newStorage;
 
          */
-       return Utils.deserialize(Utils.readFile(pathToFile));
-   }
-
+        return Utils.deserialize(Utils.readFile(pathToFile));
+    }
 
 
 }
