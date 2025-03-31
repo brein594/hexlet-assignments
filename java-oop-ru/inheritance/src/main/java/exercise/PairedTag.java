@@ -16,7 +16,6 @@ public class PairedTag extends Tag {
         this.tags = new ArrayList<>(tags);
     }
 
-    @Override
     public String toString() {
         return String.format("<%s%s>%s%s</%s>", getNameTag(), mapToString(getAttribute()),
                 listToString(this.tags), this.text, getNameTag());

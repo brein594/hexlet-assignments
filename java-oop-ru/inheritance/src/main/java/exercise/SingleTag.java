@@ -9,7 +9,6 @@ public class SingleTag extends Tag {
         super(nameTag, attribute);
     }
 
-    @Override
     public String toString() {
         return String.format("<%s%s>", getNameTag(), mapToString(getAttribute()));
     }
