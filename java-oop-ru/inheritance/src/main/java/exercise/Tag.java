@@ -4,10 +4,11 @@ import java.util.stream.Collectors;
 import java.util.Map;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
+
 //import lombok.Getter;
 // BEGIN
 //@Getter
-public class Tag{
+public abstract class Tag {
     private String nameTag;
     private LinkedHashMap<String, String> attribute;
 
@@ -20,9 +21,7 @@ public class Tag{
         }
     }
 
-    //public abstract String toString();
-
-    public String getNameTag(){
+       public String getNameTag() {
         return nameTag;
     }
 
@@ -35,16 +34,20 @@ public class Tag{
         return newMap;
     }
 
-    public String toString(){
+    public abstract String toString();
+    /*
+    public String toString() {
         return String.format("<%s%s>", getNameTag(), mapToString(getAttribute()));
     }
 
-    private static String mapToString(Map<String, String> attribute){
+    private static String mapToString(Map<String, String> attribute) {
         StringBuilder result = new StringBuilder();
         for (var key : attribute.keySet()) {
             result.append(" " + key + "=\"" + attribute.get(key) + "\"");
         }
         return result.toString();
     }
+
+     */
 }
 // END

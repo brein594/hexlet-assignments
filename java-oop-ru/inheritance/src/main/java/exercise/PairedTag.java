@@ -10,18 +10,19 @@ public class PairedTag extends Tag {
     private String text;
     private List<Tag> tags;
 
-    public PairedTag(String nameTag, Map<String, String> attribute, String text,List<Tag> tags ) {
+    public PairedTag(String nameTag, Map<String, String> attribute, String text, List<Tag> tags) {
         super(nameTag, attribute);
         this.text = text;
         this.tags = new ArrayList<>(tags);
     }
+
     @Override
     public String toString() {
         return String.format("<%s%s>%s%s</%s>", getNameTag(), mapToString(getAttribute()),
                 listToString(this.tags), this.text, getNameTag());
     }
 
-    private static String mapToString(Map<String, String> attribute){
+    private static String mapToString(Map<String, String> attribute) {
         StringBuilder result = new StringBuilder();
         for (var key : attribute.keySet()) {
             result.append(" " + key + "=\"" + attribute.get(key) + "\"");
@@ -29,7 +30,7 @@ public class PairedTag extends Tag {
         return result.toString();
     }
 
-    private static String  listToString(List<Tag> listTags) {
+    private static String listToString(List<Tag> listTags) {
         StringBuilder result = new StringBuilder();
         for (var tag : listTags) {
             result.append(tag.toString());
