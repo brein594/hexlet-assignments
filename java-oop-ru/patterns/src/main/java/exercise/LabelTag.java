@@ -1,5 +1,5 @@
 package exercise;
-import java.lang.StringBuilder;
+
 // BEGIN
 public class LabelTag implements TagInterface {
     private TagInterface labelTag;
